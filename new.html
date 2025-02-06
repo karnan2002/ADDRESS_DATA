@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APOLLO BGLR ITD</title>
+  <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px auto;
+        width: 60%;
+        height: 400px;
+        overflow: auto;
+        font-weight:bolder;
+    }
+  
+
+    
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid black; /* Add border to all cells */
+    }
+    th[colspan="5"] {
+        text-align: center;
+    }
+    td[colspan="1"] {
+        vertical-align: bottom;
+    }
+    tr.one td:nth-child(2) {
+        height: 10px; /* Adjust the height of the cell */
+        width: 70px; /* Adjust the width of the cell */
+    }
+    tr.two td:nth-child(2) {
+        height: 50px; /* Adjust the height of the cell */
+        width: 70px; /* Adjust the width of the cell */
+        
+    }
+    #shop_id{
+        text-align:center;
+    }
+
+
+  </style>
+
+
+</head>
+
+<body>
+    <table>
+        
+        <tr>
+            <th colspan="5">Apollo Pharmacies Ltd</th>
+            
+        </tr>
+        <tr>
+            <th colspan="5">Unit: Apollo Pharmacy</th>
+            
+        </tr>
+        <tr>
+            <th colspan="5">No.13/2, IHX Building, Hosur Road, Singasandra, Bangalore-560068</th>
+        </tr>
+        <tr>
+        <th colspan="5">State/GSTIN: 29AAACA5443N2ZD</th>
+          
+    </tr>
+    <tr>
+        <th style="background-color: lightgreen;" colspan="5">Delivery Challan</th>
+         
+    </tr>
+
+    <tr style="background-color: lightgreen;" class='one'>
+    <form action="/search" method="post">
+        <td rowspan="2">Bill to Party</td>
+        <td><label for="shop_id">ENTER THE SHOP_ID:</label></td>
+        <td colspan='3'><input type="text" id="shop_id" name="shop_id" maxlength="5" size="80"required></td>
+       
+        
+    </form>
+  <!--programmer : APL69954-->
+    <tr class='one'>
+        {% if result %}
+        <td>SHOP_ID : {{ result[0] }}</td>
+        <td colspan='3'>SHOP_NAME : {{ result[1] }}</td>
+       
+  
+       </tr>
+ <tr>
+        <td >APOLLO PHARMACY-ARUN-7624980176	</td>
+        <td colspan='2'>ADDRESS :{{ result[3] }} </td>
+        <td>DC No: 234  <br>        </td>
+        <td > <label for="dcDate">DC Date:</label><br>
+            <input type="date" id="dcDate" name="dcDate" value="2023-12-12" required> </td>
+          
+        
+    </tr>
+   
+   <tr>
+    <td >Contact</td>
+    <td></td>
+    <td colspan='2'>CONTACT NO :{{ result[2] }}</td>
+    <td rowspan="4"></td>
+    
+    {% endif %}
+   </tr>
+
+   <tr>
+
+    <td>GSTIN:</td>
+    <td>29AAACA5443N2ZD</td>
+    <td colspan='2'>29AAACA5443N2ZD</td>
+
+   </tr>
+
+   <tr>
+
+    <td>State:</td>
+    <td>Karnataka</td>
+    <td colspan='2'>Karnataka</td>
+    
+   </tr>
+   <tr>
+    <td>Code:</td>
+    <td>29</td>
+    <td colspan='2'>29</td>
+    
+   
+   </tr>
+   <tr style="background-color: lightgreen;">
+    <td>Si.No:</td>
+    <td>Goods / Service Description</td>
+    <td>Qty</td>
+    <td>Box</td>
+    <td>Total</td>
+   </tr>
+   <tr>
+    <td><input type="text" id="input1" name="input1" size="5"></td>
+    <td><input type="text" id="input2" name="input2" size="25"></td>
+    <td><input type="text" id="input3" name="input3" size="20"></td>
+    <td><input type="text" id="input4" name="input4" size="20"></td>
+    <td><input type="text" id="input4" name="input4" size="20"></td>
+</tr>
+<tr>
+    <td><input type="text" id="input1" name="input1" size="5"></td>
+    <td><input type="text" id="input2" name="input2" size="25"></td>
+    <td><input type="text" id="input3" name="input3" size="20"></td>
+    <td><input type="text" id="input4" name="input4" size="20"></td>
+    <td><input type="text" id="input4" name="input4" size="20"></td>
+</tr>
+<!--programmer : APL69954-->
+<tr>
+    <td style="background-color: lightgreen;" colspan='4'>Total Invoice amount in words:	</td>
+   
+    <td><input type="text" id="input4" name="input4" size="20"></td>
+   </tr>
+   <tr>
+    <td colspan='4'><input type="text" id="input4" name="input4" size="75"></td>
+    <td ><input type="text" id="input4" name="input4" size="20"></td>
+   
+   
+
+   </tr>
+   <tr>
+    <th style="background-color: lightgreen;" colspan='5'>Terms & conditions</th>
+   </tr>
+   <tr class='two'>
+    <td colspan='3'></td>
+    <td  colspan='1'>Common Seal</td>
+    <td  colspan='1'>Party's Signature</td>
+   </tr>
+</table>
+</body>
+</html>
+
